@@ -1,31 +1,49 @@
-# curriculum-databases-projects-template
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+# Vet Clinic
+
+## Description
+
+In this project I will use a relational database to create the data structure for a vet clinic. I will start with one table, and step by step, I will create a complete database with data about:
+
+- animals
+- animals' owners
+- clinic employees
+- visits
+
+## Built With
+
+- PostgreSQL
+
+## Live Demo
+
+- Comming soon
 
 
-## Getting Started
+## Run it
 
-This repository includes files with plain SQL that can be used to recreate a database:
+Use the following steps to run this Project locally:
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+- Create a directory
+
+- Open the terminal
+
+- Run this command:
+`git clone git@github.com:Juanse7793/Vet-clinic.git`
+
+- Enter in to the folder:
+`cd Vet-clinic`
+
+- Open the folder with a code editor (VS Code preferred)
 
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Juan Sebastian Sotomayor**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Juanse7793](https://github.com/Juanse7793)
+- Twitter: [@Juanse77930](https://twitter.com/Juanse77930)
+- LinkedIn: [Juan Sebastian Sotomayor](https://linkedin.com/in/juansebastiansotomayor)
 
 ## 🤝 Contributing
 
@@ -41,8 +59,8 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
+
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
