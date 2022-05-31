@@ -8,3 +8,8 @@ CREATE TABLE animals(
    neutered         BOOLEAN,
    weight_kg       DECIMAL
 );
+
+ALTER TABLE animals ADD species text NULL;
+
+ALTER TABLE animals RENAME COLUMN species TO unspecified;
+ALTER TABLE animals RENAME COLUMN unspecified TO species;
