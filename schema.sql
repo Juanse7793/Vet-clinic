@@ -11,5 +11,6 @@ CREATE TABLE animals(
 
 ALTER TABLE animals ADD species text NULL;
 
+BEGIN
 ALTER TABLE animals RENAME COLUMN species TO unspecified;
-ALTER TABLE animals RENAME COLUMN unspecified TO species;
+ROLLBACK
