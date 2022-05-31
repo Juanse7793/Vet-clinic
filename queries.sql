@@ -9,6 +9,13 @@ SELECT * FROM animals WHERE neutered = true;
 SELECT * From animals WHERE name != 'Gabumon';
 SELECT * FROM animals WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
 
+ALTER TABLE animals ADD species text NULL;
+
+BEGIN
+ALTER TABLE animals RENAME COLUMN species TO unspecified;
+ROLLBACK
+
+BEGIN
 UPDATE animals
 SET species = 'digimon' 
 WHERE name LIKE '%mon%';
@@ -16,6 +23,7 @@ WHERE name LIKE '%mon%';
 UPDATE animals
 SET species = 'pokemon' 
 WHERE name NOT LIKE '%mon%';
+COMMIT
 
 BEGIN;
 DELETE FROM animals;
@@ -26,6 +34,7 @@ DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 SAVEPOINT SP1;
 UPDATE animals SET weight_kg = weight_kg * -1;
 ROLLBACK TO SAVEPOINT SP1;
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 COMMIT;
 
 SELECT COUNT(*) FROM animals
