@@ -29,3 +29,21 @@ INSERT INTO species VALUES
 (DEFAULT, 'Pokemon'),
 (DEFAULT, 'Digimon');
 COMMIT;
+
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Pokemon') WHERE name NOT LIKE '%mon';
+
+UPDATE animals
+SET owners_id =
+  CASE name
+    WHEN 'Agumon' THEN (SELECT id FROM owners WHERE full_name = 'Sam Smith')
+    WHEN 'Gabumon' THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+    WHEN 'Pikachu' THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+    WHEN 'Devimon' THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+    WHEN 'Plantmon' THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+    WHEN 'Charmander' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+    WHEN 'Squirtle' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+    WHEN 'Blossom' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+    WHEN 'Angemon' THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+    WHEN 'Boarmon' THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+  END;
