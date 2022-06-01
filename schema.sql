@@ -21,3 +21,9 @@ CREATE TABLE species (
    name TEXT,
    PRIMARY KEY (id)
 );
+
+ALTER TABLE animals DROP id;
+ALTER TABLE animals DROP CONSTRAINT animals_pk;
+ALTER TABLE animals ADD id INT NOT NULL GENERATED ALWAYS AS IDENTITY;
+ALTER TABLE animals ADD CONSTRAINT animals_pk PRIMARY KEY (id);
+
