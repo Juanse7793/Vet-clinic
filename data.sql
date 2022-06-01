@@ -12,3 +12,15 @@ INSERT INTO animals (id, "name", date_of_birth, escape_attempts, neutered, weigh
 INSERT INTO animals (id, "name", date_of_birth, escape_attempts, neutered, weight_kg, species) VALUES(9, 'Boarmon', '2005-06-07', 7, true, 20.4, NULL);
 INSERT INTO animals (id, "name", date_of_birth, escape_attempts, neutered, weight_kg, species) VALUES(10, 'Blossom', '1998-10-13', 3, true, 17.0, NULL);
 INSERT INTO animals (id, "name", date_of_birth, escape_attempts, neutered, weight_kg, species) VALUES(11, 'Ditto', '2022-05-14', 4, true, 22.0, NULL);
+
+
+BEGIN;
+INSERT INTO owners VALUES
+(DEFAULT, 'Sam Smith', 34),
+(DEFAULT, 'Jennifer Orwell', 19),
+(DEFAULT, 'Bob', 45),
+(DEFAULT, 'Melody Pond', 77),
+(DEFAULT, 'Dean Winchester', 14),
+(DEFAULT, 'Jodie Whittaker', 38);
+COMMIT;
+
