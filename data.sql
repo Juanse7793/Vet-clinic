@@ -56,6 +56,7 @@ INSERT INTO vets VALUES (DEFAULT, 'Maisy Smith', 26, '2019-01-17');
 -- Vet Stephanie Mendez is 64 years old and graduated May 4th, 1981.
 INSERT INTO vets VALUES (DEFAULT, 'Stephanie Mendez', 64, '1981-05-04');
 -- Vet Jack Harkness is 38 years old and graduated Jun 8th, 2008.
+INSERT INTO vets VALUES (DEFAULT, 'Jack Harkness', 38, '2008-06-08');
 
 -- Insert the following data for specializations:
 -- Vet William Tatcher is specialized in Pokemon.
