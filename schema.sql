@@ -33,3 +33,26 @@ BEGIN;
 ALTER TABLE animals ADD species_id INT references species(id),
 ALTER TABLE animals  ADD owner_id INT references owners(id);
 COMMIT;
+
+CREATE TABLE vets (
+   id INT GENERATED ALWAYS AS IDENTITY,
+   name TEXT,
+   age INT,
+   date_of_graduation DATE,
+   PRIMARY KEY (id)
+);
+
+-- create join table specializations between species and vets;
+CREATE TABLE specializations (
+   vet_id INT references vets(id),
+   species_id INT references species(id),
+   PRIMARY KEY (vet_id, species_id)
+);
+
+-- create a join table visits between animals and vets;
+CREATE TABLE visits (
+   animal_id INT references animals(id),
+   vet_id INT references vets(id),
+   date_of_visit DATE,
+   PRIMARY KEY (animal_id, vet_id, date_of_visit)
+);
