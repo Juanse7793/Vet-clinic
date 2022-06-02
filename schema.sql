@@ -48,3 +48,11 @@ CREATE TABLE specializations (
    species_id INT references species(id),
    PRIMARY KEY (vet_id, species_id)
 );
+
+-- create a join table visits between animals and vets;
+CREATE TABLE visits (
+   animal_id INT references animals(id),
+   vet_id INT references vets(id),
+   date_of_visit DATE,
+   PRIMARY KEY (animal_id, vet_id)
+);
