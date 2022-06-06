@@ -93,3 +93,6 @@ SELECT species.name, COUNT(*) FROM visits JOIN vets ON vets.id = visits.vet_id J
 SELECT COUNT(*) FROM visits where animal_id = 4;
 -- Find a way to decrease the execution time of the first query. Look for hints in the previous lessons.
 CREATE INDEX id on visits(animals_id);
+
+SELECT * FROM visits where vet_id = 2;
+CREATE INDEX id_vet on visits(vet_id);
