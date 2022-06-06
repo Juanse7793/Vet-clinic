@@ -87,3 +87,9 @@ SELECT animals.name, vets.name, visits.date_of_visit FROM animals JOIN visits ON
 SELECT COUNT(*) FROM visits JOIN vets ON visits.vet_id = vets.id JOIN animals ON visits.animal_id = animals.id WHERE vets.id NOT IN (SELECT vets.id FROM vets JOIN specializations ON vets.id = specializations.vet_id WHERE specializations.species_id = animals.species_id);
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 SELECT species.name, COUNT(*) FROM visits JOIN vets ON vets.id = visits.vet_id JOIN animals ON animals.id = visits.animal_id JOIN species ON species.id = animals.species_id WHERE vets.name = 'Maisy Smith' GROUP BY species.name ORDER BY count DESC LIMIT 1;
+
+
+
+SELECT COUNT(*) FROM visits where animal_id = 4;
+-- Find a way to decrease the execution time of the first query. Look for hints in the previous lessons.
+CREATE INDEX id on visits(animals_id);
