@@ -19,7 +19,8 @@ CREATE TABLE invoice_items (
   total_price DECIMAL(10,2),
   invoice_id INTEGER,
   treatment_id INTEGER,
-  FOREIGN KEY (invoice_id) REFERENCES invoices (id)
+  FOREIGN KEY (invoice_id) REFERENCES invoices (id),
+  FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
 
 CREATE TABLE invoices (
@@ -29,4 +30,18 @@ CREATE TABLE invoices (
   payed_at TIMESTAMP,
   medical_history_id INTEGER,
   FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id)
-)
+);
+
+CREATE TABLE treatments (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  type VARCHAR(255),
+  name VARCHAR(255),
+);
+
+CREATE TABLE medical_histories_treatments (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  treatment_id INTEGER,
+  medical_history_id INTEGER,
+  FOREIGN KEY (treatment_id) REFERENCES treatments(id),
+  FOREIGN key (medical_history_id) REFERENCES medical_histories(id)
+);
