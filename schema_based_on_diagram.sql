@@ -21,3 +21,12 @@ CREATE TABLE invoice_items (
   treatment_id INTEGER,
   FOREIGN KEY (invoice_id) REFERENCES invoices (id)
 );
+
+CREATE TABLE invoices (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  total_amount DECIMAL(10,2),
+  generated_at TIMESTAMP,
+  payed_at TIMESTAMP,
+  medical_history_id INTEGER,
+  FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id)
+)
