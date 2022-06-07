@@ -15,9 +15,9 @@ In this project I will use a relational database to create the data structure fo
 
 - PostgreSQL
 
-## Live Demo
+## ER Diagram
 
-- Comming soon
+<img src="images/vet.png" width="400px">
 
 
 ## Run it
